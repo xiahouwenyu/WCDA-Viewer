@@ -110,7 +110,6 @@ def xy2ij():
             if ifhh:
                 hxi.append([np.where(detx == x)[0][0] for x in h['x'][ii+padh][0]])
                 hyj.append([np.where(dety == y)[0][0] for y in h['y'][ii+padh][0]])
-        # from IPython import embed;embed()
         BTt.insert(INSERT,"xy2ij: Done!!!"+"\n");BTt.see(END)
     except Exception as e:
         l1['text']='ERROR!!'
@@ -175,7 +174,6 @@ def plot():
                             sccch = sccch.replace(item, ("h['%s'][i+padh][0]" %item))
                             scch = sccch
 
-            # from IPython import embed;embed()
             while ((not ieventg) and ifgd) or ((not ieventh) and ifhd):
                 p1['value']+=1
                 root.update()
@@ -431,7 +429,6 @@ def plot():
         l1['text']='Drawing completed in plot! '
         BTt.insert(INSERT,"Drawing completed in plot!"+"\n");BTt.see(END)
         root.update()
-        # from IPython import embed;embed()
     except Exception as e:
         l1['text']='ERROR!!'
         BTt.insert(INSERT,"ERROR:"+"\n");BTt.see(END)
@@ -485,7 +482,6 @@ def load():
                 fhadron=TFile(fhname)
                 thadron = fhadron.Get("rec")
                 Parameters= list(set(Parameters).union(set([str(i).split()[1] for i in list(thadron.GetListOfBranches())])))
-            # from IPython import embed;embed()
             for item in C.keys():
                 if CV[item].get():
                     print("Load "+item)
